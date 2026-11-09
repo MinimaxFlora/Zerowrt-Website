@@ -53,6 +53,8 @@ export default defineConfig({
     ["meta", { property: "og:title", content: "ZeroWrt 固件下载与在线升级" }],
     ["meta", { property: "og:description", content: "按设备下载最新 ZeroWrt 固件，或直接在 LuCI 中在线升级。" }],
     ["meta", { property: "og:image", content: "/logo.png" }],
+    ["link", { rel: "alternate", hreflang: "zh-CN", href: "https://ota.tatalvpai.vip/" }],
+    ["link", { rel: "alternate", hreflang: "en", href: "https://ota.tatalvpai.vip/en/" }],
   ],
   themeConfig: zhThemeConfig,
   locales: {
