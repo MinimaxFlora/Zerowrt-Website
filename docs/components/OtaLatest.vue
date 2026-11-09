@@ -53,7 +53,7 @@ const ui = computed(() =>
         notProvided: "Not provided",
       }
     : {
-        kicker: "Latest builds",
+        kicker: "最新构建",
         title: "最新固件",
         indexUpdated: "索引更新于",
         readingIndex: "正在读取索引…",
