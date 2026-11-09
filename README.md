@@ -12,6 +12,16 @@ ZeroWrt 固件下载与在线升级页面，基于 VitePress 和
 
 更新日志只在 `/changelog` 展示，首页不展开完整历史，避免页面越来越长。
 
+## 语言规范
+
+- 中文：`zh-CN`，路径 `/`
+- English：`en-US`，路径 `/en/`
+- 每个页面都有对应语言的 `.md`，导航、标题、按钮和空状态通过
+  `OtaLatest.vue` / `OtaChangelog.vue` 内的 `zh` / `en` 字典切换
+- 日期使用 `Intl.DateTimeFormat` 按 `zh-CN` / `en-US` 格式化
+- 页面 head 输出 `hreflang` 的 `zh-CN` / `en` alternate 链接
+- 语言切换使用 VitePress `locales`，不依赖 URL 查询参数
+
 ## 本地开发
 
 需要 Node.js 20+ 和 pnpm：
