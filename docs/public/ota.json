@@ -1,20 +1,20 @@
 {
   "schema": 2,
-  "generator": "zerowrt ota index",
-  "generated": 1794170788,
+  "generator": "1Panel-Website",
+  "generated": 1794195374,
   "dist": "ZeroWrt",
   "devices": {
     "ruijie_rg-x60-new": {
-      "version": "20261109",
       "build_date": 1794160054,
-      "url": "https://github.com/MinimaxFlora/ZeroWrt/releases/download/mediatek_filogic/zerowrt-mediatek-filogic-ruijie_rg-x60-new-squashfs-sysupgrade.bin",
+      "changelog": "**ZeroWrt 20261109**\n\nDevice: `ruijie_rg-x60-new`\n\nTarget: `mediatek/filogic`\n\nBuilt: 2026-11-09 01:47:34 +0800\n\nSource: [Yuzhii0718/immortalwrt-mt798x-6.6-padavanonly@6e1f514b9915](https://github.com/Yuzhii0718/immortalwrt-mt798x-6.6-padavanonly/commit/6e1f514b9915)\n\n[Workflow run](https://github.com/MinimaxFlora/ZeroWrt/actions/runs/42506377106)",
+      "device": "ruijie_rg-x60-new",
+      "file": "zerowrt-mediatek-filogic-ruijie_rg-x60-new-squashfs-sysupgrade.bin",
+      "label": "Ruijie RG-X60 New",
       "sha256": "471d3232ca3bcf89526e7c8ae0a6df165ffbf0d250d403a7e58d5c88d51bda9f",
       "size": 42844966,
-      "file": "zerowrt-mediatek-filogic-ruijie_rg-x60-new-squashfs-sysupgrade.bin",
       "target": "mediatek/filogic",
-      "device": "ruijie_rg-x60-new",
-      "changelog": "**ZeroWrt 20261109**\n\nDevice: `ruijie_rg-x60-new`\n\nTarget: `mediatek/filogic`\n\nBuilt: 2026-11-09 01:47:34 +0800\n\nSource: [Yuzhii0718/immortalwrt-mt798x-6.6-padavanonly@6e1f514b9915](https://github.com/Yuzhii0718/immortalwrt-mt798x-6.6-padavanonly/commit/6e1f514b9915)\n\n[Workflow run](https://github.com/MinimaxFlora/ZeroWrt/actions/runs/42506377106)",
-      "label": "Ruijie RG-X60 New"
+      "url": "https://github.com/MinimaxFlora/ZeroWrt/releases/download/mediatek_filogic/zerowrt-mediatek-filogic-ruijie_rg-x60-new-squashfs-sysupgrade.bin",
+      "version": "20261109"
     }
   }
 }
