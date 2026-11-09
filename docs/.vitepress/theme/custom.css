@@ -35,7 +35,7 @@
 }
 
 .VPHero .image-container {
-  transform: translateY(6px);
+  transform: translate(32px, 6px);
 }
 
 .VPHero .image-src {
@@ -71,6 +71,10 @@
 }
 
 @media (max-width: 960px) {
+  .VPHero .image-container {
+    transform: translateY(6px);
+  }
+
   .VPHero .image-src {
     max-width: 460px !important;
   }
