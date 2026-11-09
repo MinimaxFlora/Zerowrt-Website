@@ -33,6 +33,7 @@ const ui = computed(() =>
         next: "Next",
         page: "Page",
         filter: "Filter by device",
+        legacy: "Legacy asset was overwritten",
         notRecorded: "Not recorded",
         unknownSize: "Unknown",
         unknown: "unknown",
@@ -49,6 +50,7 @@ const ui = computed(() =>
         next: "下一页",
         page: "第",
         filter: "按设备筛选",
+        legacy: "旧版本资产已被覆盖",
         notRecorded: "未记录",
         unknownSize: "未知",
         unknown: "未知",
@@ -111,6 +113,10 @@ function formatSize(value?: number): string {
   return `${unit === 0 ? Math.round(size) : size.toFixed(1)} ${units[unit]}`;
 }
 
+function isLegacy(release: Release): boolean {
+  return Boolean(release.url?.includes("/download/mediatek_filogic/"));
+}
+
 function renderLog(value?: string): string {
   if (!value) return `<p>${ui.value.noLog}</p>`;
   return DOMPurify.sanitize(marked.parse(value) as string);
@@ -165,9 +171,10 @@ onMounted(async () => {
         </div>
         <div class="ota-release-body" v-html="renderLog(release.changelog)" />
         <footer class="ota-release-footer">
-          <a v-if="release.url" class="ota-download" :href="release.url" target="_blank" rel="noopener noreferrer">
+          <a v-if="release.url && !isLegacy(release)" class="ota-download" :href="release.url" target="_blank" rel="noopener noreferrer">
             {{ ui.download }}
           </a>
+          <span v-else-if="isLegacy(release)" class="ota-legacy">{{ ui.legacy }}</span>
         </footer>
       </article>
 

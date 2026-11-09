@@ -398,6 +398,16 @@
   margin-top: 12px;
 }
 
+.ota-legacy {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9px;
+  background: var(--vp-c-default-soft);
+  color: var(--vp-c-text-2);
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
 .ota-pager {
   display: flex;
   align-items: center;
