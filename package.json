@@ -1,5 +1,5 @@
 {
-  "name": "zerowrt-ota-site",
+  "name": "1panel-website",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@11.28.5",
