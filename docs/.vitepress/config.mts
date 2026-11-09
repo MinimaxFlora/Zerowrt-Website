@@ -43,7 +43,7 @@ export default defineConfig({
   titleTemplate: ":title | ZeroWrt",
   description:
     "ZeroWrt 固件下载与在线升级：按设备查看最新构建、SHA256、更新日志与 OTA 升级方式。",
-  cleanUrls: false,
+  cleanUrls: true,
   lastUpdated: false,
   head: [
     ["link", { rel: "icon", type: "image/png", href: "/logo.png" }],
