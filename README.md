@@ -1,4 +1,4 @@
-# ZeroWrt OTA
+# ZeroWrt OTA / 1Panel-Website
 
 ZeroWrt 固件下载与在线升级页面，基于 VitePress 和
 [vitepress-theme-teek](https://github.com/Kele-Bingtang/vitepress-theme-teek)。
@@ -22,6 +22,29 @@ ZeroWrt 固件下载与在线升级页面，基于 VitePress 和
 - 页面 head 输出 `hreflang` 的 `zh-CN` / `en` alternate 链接
 - 语言切换使用 VitePress `locales`，不依赖 URL 查询参数
 
+## 数据流
+
+ZeroWrt 固件构建完成后，**只发送一个 `repository_dispatch`**，事件类型为
+`firmware-release`，payload 包含：
+
+```json
+{
+  "entry": { "device": "...", "version": "...", "url": "...", "sha256": "...", "size": 0 },
+  "device_keys": ["..."],
+  "dist": "ZeroWrt"
+}
+```
+
+本仓库的 `Deploy Site` workflow 负责：
+
+1. 校验 payload，把 entry 合并进 `docs/public/ota.json`；
+2. 追加 `history.json`，保留最近 500 条；
+3. 提交数据（`[skip ci]`，避免循环构建）；
+4. `pnpm install --frozen-lockfile && pnpm build`；
+5. 推送到 Cloudflare Pages 项目 `zerowrt-ota`。
+
+普通 push 会用 `pnpm sync:data` 拉取线上数据后重新构建部署。
+
 ## 本地开发
 
 需要 Node.js 20+ 和 pnpm：
@@ -38,24 +61,18 @@ pnpm build
 pnpm preview
 ```
 
-## 数据
-
-`docs/public/ota.json` 和 `docs/public/history.json` 是页面数据。部署前会由
-ZeroWrt 构建流程写入最新内容；也可以手动同步：
-
-```bash
-pnpm sync:data
-```
-
-`OTA_BASE_URL` 可以覆盖数据源，默认是 `https://ota.tatalvpai.vip`。
-
 ## 部署
 
-ZeroWrt 的构建流程会：
+`Deploy Site` workflow 在以下情况运行：
 
-1. 生成最新的 `ota.json` / `history.json`；
-2. checkout 本仓库并写入 `docs/public`；
-3. 执行 `pnpm build`；
-4. 将 `docs/.vitepress/dist` 部署到 Cloudflare Pages 项目 `zerowrt-ota`。
+- `repository_dispatch`：ZeroWrt 发布新固件（推荐路径）
+- `push` 到 `main`：页面/样式改动
+- `workflow_dispatch`：手动重新部署
 
-GitHub Actions 的 `Build` workflow 只负责构建检查，不直接部署。
+Cloudflare Pages 使用仓库 Secrets：
+
+```text
+CLOUDFLARE_API_TOKEN
+CLOUDFLARE_ACCOUNT_ID
+```
+
