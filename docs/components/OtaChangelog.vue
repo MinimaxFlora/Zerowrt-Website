@@ -114,7 +114,12 @@ function formatSize(value?: number): string {
 }
 
 function isLegacy(release: Release): boolean {
-  return Boolean(release.url?.includes("/download/mediatek_filogic/"));
+  const match = release.url?.match(/\/releases\/download\/([^/]+)\//);
+  if (!match) return true;
+  const tag = match[1];
+  // The old per-device tags were overwritten; the current mediatek_filogic
+  // asset is still valid until the next immutable release is published.
+  return tag !== "mediatek_filogic" && !/^zerowrt-.+-\d+$/.test(tag);
 }
 
 function renderLog(value?: string): string {
