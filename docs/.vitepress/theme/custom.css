@@ -1,3 +1,81 @@
+
+.VPHome {
+  background:
+    radial-gradient(900px 520px at 18% 8%, rgba(236, 72, 153, 0.10), transparent 62%),
+    radial-gradient(760px 500px at 88% 14%, rgba(124, 58, 237, 0.10), transparent 64%),
+    var(--vp-c-bg);
+}
+
+.VPHero {
+  position: relative;
+  padding-top: 76px;
+}
+
+.VPHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 72%);
+}
+
+.dark .VPHome {
+  background:
+    radial-gradient(900px 520px at 18% 8%, rgba(236, 72, 153, 0.13), transparent 62%),
+    radial-gradient(760px 500px at 88% 14%, rgba(124, 58, 237, 0.16), transparent 64%),
+    var(--vp-c-bg);
+}
+
+.VPHero .image-bg {
+  display: none;
+}
+
+.VPHero .image-container {
+  transform: translateY(6px);
+}
+
+.VPHero .image-src {
+  max-width: 560px !important;
+  border-radius: 22px;
+  box-shadow: 0 40px 90px rgba(15, 23, 42, 0.22);
+}
+
+.dark .VPHero .image-src {
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5);
+}
+
+.VPFeature {
+  border: 1px solid var(--ota-border) !important;
+  border-radius: 16px !important;
+  background: var(--ota-surface) !important;
+  box-shadow: var(--ota-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.VPFeature .box {
+  padding: 22px !important;
+}
+
+.VPFeature .icon {
+  border-radius: 12px;
+  background: var(--vp-c-brand-soft);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+
+@media (max-width: 960px) {
+  .VPHero .image-src {
+    max-width: 460px !important;
+  }
+}
+
 :root {
   --vp-c-brand-1: #ec4899;
   --vp-c-brand-2: #be185d;

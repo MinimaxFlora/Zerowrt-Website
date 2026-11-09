@@ -9,6 +9,9 @@ hero:
   name: ZeroWrt
   text: 为 MT798x 打造的轻量固件
   tagline: 下载最新构建，或直接在 LuCI 里检查并安装更新。
+  image:
+    src: /hero-dashboard.svg
+    alt: ZeroWrt OTA dashboard
   actions:
     - theme: brand
       text: 下载最新固件

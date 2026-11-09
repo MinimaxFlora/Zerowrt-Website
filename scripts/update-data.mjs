@@ -29,7 +29,7 @@ const index = JSON.parse(await readFile(indexPath, "utf8"));
 const history = JSON.parse(await readFile(historyPath, "utf8"));
 
 index.schema ??= 2;
-index.generator = "1Panel-Website";
+index.generator = "Zerowrt-Website";
 index.generated = Math.floor(Date.now() / 1000);
 index.dist = payload.dist || index.dist || "ZeroWrt";
 index.devices ??= {};

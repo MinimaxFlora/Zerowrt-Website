@@ -1,4 +1,4 @@
-# ZeroWrt OTA / 1Panel-Website
+# ZeroWrt OTA / Zerowrt-Website
 
 ZeroWrt 固件下载与在线升级页面，基于 VitePress 和
 [vitepress-theme-teek](https://github.com/Kele-Bingtang/vitepress-theme-teek)。

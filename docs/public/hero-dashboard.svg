@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="40" x2="820" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.55" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#160E2B"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="180" y1="140" x2="650" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F472B6"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="280" y1="520" x2="740" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EC4899" stop-opacity="0"/>
+      <stop offset="0.6" stop-color="#EC4899" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#020617" flood-opacity=".55"/>
+    </filter>
+  </defs>
+
+  <rect x="20" y="20" width="860" height="680" rx="28" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="20.5" y="20.5" width="859" height="679" rx="27.5" stroke="#FFFFFF" stroke-opacity=".12"/>
+  <circle cx="760" cy="110" r="210" fill="#7C3AED" opacity=".12" filter="url(#glow)"/>
+  <circle cx="180" cy="600" r="190" fill="#EC4899" opacity=".10" filter="url(#glow)"/>
+
+  <rect x="48" y="48" width="804" height="52" rx="12" fill="#FFFFFF" fill-opacity=".045"/>
+  <circle cx="74" cy="74" r="6" fill="#FB7185"/>
+  <circle cx="94" cy="74" r="6" fill="#FBBF24"/>
+  <circle cx="114" cy="74" r="6" fill="#34D399"/>
+  <text x="140" y="79" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">zerowrt — online-update</text>
+  <rect x="710" y="60" width="118" height="28" rx="14" fill="#34D399" fill-opacity=".12"/>
+  <circle cx="728" cy="74" r="4" fill="#34D399"/>
+  <text x="740" y="79" fill="#6EE7B7" font-family="Inter, sans-serif" font-size="12" font-weight="600">CONNECTED</text>
+
+  <rect x="48" y="120" width="166" height="560" rx="16" fill="#FFFFFF" fill-opacity=".035"/>
+  <rect x="68" y="142" width="34" height="34" rx="10" fill="url(#pink)"/>
+  <text x="80" y="165" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="18" font-weight="800">Z</text>
+  <text x="112" y="164" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="14" font-weight="700">ZeroWrt</text>
+  <text x="68" y="214" fill="#64748B" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.5">WORKSPACE</text>
+  <rect x="60" y="230" width="142" height="34" rx="9" fill="#EC4899" fill-opacity=".14"/>
+  <rect x="60" y="230" width="3" height="34" rx="2" fill="#EC4899"/>
+  <text x="76" y="252" fill="#F9A8D4" font-family="Inter, sans-serif" font-size="12" font-weight="600">Overview</text>
+  <text x="76" y="288" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Firmware</text>
+  <text x="76" y="324" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Changelog</text>
+  <text x="76" y="360" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Devices</text>
+  <text x="68" y="424" fill="#64748B" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.5">SYSTEM</text>
+  <text x="76" y="458" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Settings</text>
+  <text x="76" y="494" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Logs</text>
+
+  <text x="242" y="160" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="24" font-weight="750">Online update</text>
+  <text x="242" y="184" fill="#64748B" font-family="Inter, sans-serif" font-size="12">One device · verified release pipeline</text>
+  <rect x="694" y="138" width="140" height="36" rx="10" fill="#FFFFFF" fill-opacity=".06"/>
+  <text x="714" y="161" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="12" font-weight="600">Check update</text>
+
+  <rect x="242" y="208" width="592" height="182" rx="16" fill="#FFFFFF" fill-opacity=".045"/>
+  <text x="266" y="238" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" font-weight="600">CURRENT FIRMWARE</text>
+  <text x="266" y="278" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="30" font-weight="800">2026.11.09</text>
+  <rect x="266" y="292" width="116" height="24" rx="12" fill="#34D399" fill-opacity=".12"/>
+  <text x="282" y="309" fill="#6EE7B7" font-family="Inter, sans-serif" font-size="11" font-weight="600">LATEST BUILD</text>
+  <text x="266" y="346" fill="#64748B" font-family="Inter, sans-serif" font-size="11">Ruijie RG-X60 New</text>
+  <text x="266" y="368" fill="#64748B" font-family="Inter, sans-serif" font-size="11">mediatek/filogic · 40.9 MiB</text>
+
+  <circle cx="700" cy="300" r="58" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="10"/>
+  <circle cx="700" cy="300" r="58" stroke="#EC4899" stroke-width="10" stroke-linecap="round" stroke-dasharray="320 364" transform="rotate(-90 700 300)"/>
+  <text x="700" y="296" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="22" font-weight="800" text-anchor="middle">88%</text>
+  <text x="700" y="316" fill="#64748B" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">DOWNLOAD</text>
+
+  <rect x="242" y="408" width="592" height="150" rx="16" fill="#FFFFFF" fill-opacity=".035"/>
+  <text x="266" y="438" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" font-weight="600">TRANSFER HISTORY</text>
+  <path d="M266 516C310 516 320 478 356 486C392 494 410 452 448 468C486 484 500 438 540 446C580 454 590 424 628 430C666 436 684 404 716 412C748 420 772 396 810 404" stroke="url(#chart)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M266 516C310 516 320 478 356 486C392 494 410 452 448 468C486 484 500 438 540 446C580 454 590 424 628 430C666 436 684 404 716 412C748 420 772 396 810 404V542H266Z" fill="url(#chart)" opacity=".12"/>
+  <line x1="266" y1="542" x2="810" y2="542" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="266" y="554" fill="#475569" font-family="Inter, sans-serif" font-size="9">20:00</text>
+  <text x="720" y="554" fill="#475569" font-family="Inter, sans-serif" font-size="9">NOW</text>
+
+  <rect x="242" y="584" width="284" height="80" rx="14" fill="#FFFFFF" fill-opacity=".045"/>
+  <text x="264" y="614" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10" font-weight="600">SHA256 VERIFIED</text>
+  <text x="264" y="640" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">471d3232…51bda9f</text>
+  <rect x="550" y="584" width="284" height="80" rx="14" fill="#FFFFFF" fill-opacity=".045"/>
+  <text x="572" y="614" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10" font-weight="600">DEPLOY TARGET</text>
+  <text x="572" y="640" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="12">Cloudflare Pages · main</text>
+</svg>
