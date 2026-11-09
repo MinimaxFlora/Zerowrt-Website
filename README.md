@@ -8,6 +8,7 @@ ZeroWrt 固件下载与在线升级页面，基于 VitePress 和
 - `/`：最新固件、设备筛选、SHA256 与下载入口
 - `/changelog`：完整更新日志，按设备筛选、搜索和分页
 - `/guide`：LuCI 在线升级与手动刷机说明
+- `/en/`：English version of the same pages
 
 更新日志只在 `/changelog` 展示，首页不展开完整历史，避免页面越来越长。
 
