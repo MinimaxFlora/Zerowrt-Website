@@ -39,7 +39,7 @@
 }
 
 .VPHero .image-src {
-  max-width: 560px !important;
+  max-width: 640px !important;
   border-radius: 22px;
   box-shadow: 0 40px 90px rgba(15, 23, 42, 0.22);
 }
