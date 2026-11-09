@@ -10,8 +10,8 @@ hero:
   text: Lightweight firmware for MT798x
   tagline: Download the latest build, or update directly from LuCI.
   image:
-    src: /hero-dashboard.svg
-    alt: ZeroWrt OTA dashboard
+    src: /hero-visual.jpg
+    alt: ZeroWrt artwork
   actions:
     - theme: brand
       text: Download firmware
