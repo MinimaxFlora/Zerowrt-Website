@@ -6,51 +6,56 @@
   <title>ZeroWrt · 固件下载与在线升级</title>
   <meta name="description" content="ZeroWrt 固件下载：按设备查看最新构建、SHA256、更新日志，或在 LuCI 里直接在线升级（OTA）。">
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="./">
-      <span class="brand-mark">Z</span>
+    <a class="brand" href="./" aria-label="ZeroWrt">
+      <img class="brand-logo" src="assets/logo.svg" alt="" width="32" height="32">
       <span class="brand-name">ZeroWrt</span>
+      <span class="brand-tag">OTA</span>
     </a>
     <nav class="nav">
       <a href="#firmware" data-i18n="nav.firmware">固件下载</a>
-      <a href="#ota" data-i18n="nav.ota">在线升级</a>
-      <a href="#changelog" data-i18n="nav.changelog">更新日志</a>
       <a href="https://github.com/MinimaxFlora/ZeroWrt" target="_blank" rel="noopener">GitHub</a>
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">EN</button>
     </nav>
-    <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">EN</button>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow" data-i18n="hero.eyebrow">OpenWrt / LEDE · 自动构建</p>
-        <h1 data-i18n="hero.title">为你的设备准备的 ZeroWrt 固件</h1>
-        <p class="lede" data-i18n="hero.lede">
-          按设备查看最新构建、校验和与更新日志；固件内置在线升级，装好之后可以在 LuCI 里一键检查、下载并安装新版本。
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#firmware" data-i18n="hero.cta">查看固件</a>
-          <a class="btn" href="https://github.com/MinimaxFlora/ZeroWrt/releases" target="_blank" rel="noopener" data-i18n="hero.releases">全部 Release</a>
+      <div class="hero-panel">
+        <div class="hero-inner">
+          <p class="eyebrow" data-i18n="hero.eyebrow">OPENWRT / LEDE · 自动构建</p>
+          <h1><span data-i18n="hero.title">为你的设备准备的</span><br><em>ZeroWrt</em></h1>
+          <p class="lede" data-i18n="hero.lede">
+            按设备查看最新构建、校验和与更新日志；固件内置在线升级，装好之后可以在 LuCI 里一键检查、下载并安装新版本。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#firmware" data-i18n="hero.cta">查看固件</a>
+            <a class="btn btn-ghost" href="https://github.com/MinimaxFlora/ZeroWrt/releases" target="_blank" rel="noopener" data-i18n="hero.releases">全部 Release</a>
+          </div>
+          <div class="hero-meta">
+            <span class="meta-strip"><span data-i18n="hero.updated">索引更新时间</span> · <time id="index-time">—</time></span>
+            <span class="meta-strip">SCHEMA 2 · OTA.JSON</span>
+          </div>
         </div>
-        <p class="meta-line">
-          <span data-i18n="hero.updated">索引更新时间</span>:
-          <time id="index-time">—</time>
-        </p>
       </div>
-      <div class="hero-panel" aria-hidden="true">
-        <pre><code>uci set ota.config.api_url='https://ota.tatalvpai.vip/ota.json'
+      <div class="hero-art" role="img" aria-label="ZeroWrt artwork">
+        <div class="hero-art-card">
+          <span class="art-badge">OTA READY</span>
+          <pre><code>uci set ota.config.api_url='https://ota.tatalvpai.vip/ota.json'
 uci commit ota
 ota check</code></pre>
+        </div>
       </div>
     </section>
 
     <section id="firmware" class="section">
       <div class="section-head">
-        <h2 data-i18n="firmware.title">最新固件</h2>
+        <h2><span class="sec-no">01</span><span data-i18n="firmware.title">最新固件</span></h2>
         <p class="section-note" data-i18n="firmware.note">
           每张卡片对应更新索引里的一个设备标识；固件由 GitHub Actions 从源码编译并发布到 Release。
         </p>
@@ -62,7 +67,7 @@ ota check</code></pre>
 
     <section id="ota" class="section">
       <div class="section-head">
-        <h2 data-i18n="ota.title">在线升级（OTA）</h2>
+        <h2><span class="sec-no">02</span><span data-i18n="ota.title">在线升级（OTA）</span></h2>
         <p class="section-note" data-i18n="ota.note">
           ZeroWrt 自带 luci-app-ota：在 LuCI 里检查、下载、校验并安装固件，无需手动上传文件。
         </p>
@@ -95,7 +100,7 @@ ota check</code></pre>
 
     <section id="changelog" class="section">
       <div class="section-head">
-        <h2 data-i18n="changelog.title">更新日志</h2>
+        <h2><span class="sec-no">03</span><span data-i18n="changelog.title">更新日志</span></h2>
         <p class="section-note" data-i18n="changelog.note">按设备列出最近几次构建。</p>
       </div>
       <div id="history" class="history">
@@ -105,9 +110,13 @@ ota check</code></pre>
   </main>
 
   <footer class="site-footer">
+    <div class="footer-strip">
+      <span>ZEROWRT · OTA INDEX</span>
+      <span data-i18n="footer.built">由 GitHub Actions 构建</span>
+    </div>
     <p>
-      <span data-i18n="footer.built">由 GitHub Actions 构建</span> ·
-      <a href="https://github.com/MinimaxFlora/ZeroWrt" target="_blank" rel="noopener">MinimaxFlora/ZeroWrt</a> ·
+      <a href="https://github.com/MinimaxFlora/ZeroWrt" target="_blank" rel="noopener">MinimaxFlora/ZeroWrt</a>
+      ·
       <a href="https://github.com/MinimaxFlora/Zerowrt-Website" target="_blank" rel="noopener">本站源码</a>
     </p>
     <p class="dim" data-i18n="footer.disclaimer">固件按现状提供，刷机有风险，请先备份配置。</p>
