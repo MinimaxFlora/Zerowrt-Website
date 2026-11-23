@@ -1,0 +1,52 @@
+name: Update OTA index
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 每 30 分钟跟随一次最新构建；也可以手动触发
+    - cron: "*/30 * * * *"
+  push:
+    branches: [ main ]
+    paths:
+      - "data/**"
+      - "tools/**"
+      - ".github/workflows/update-index.yml"
+
+permissions:
+  contents: write
+
+concurrency: update-index
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate ota.json and history.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/gen_site_data.py --out .
+
+      - name: Show result
+        run: |
+          python3 - <<'PY'
+          import json
+          idx = json.load(open('ota.json', encoding='utf-8'))
+          print('devices:', list(idx['devices']))
+          for k, v in idx['devices'].items():
+              print(f"  {k}: {v.get('version')} build_date={v.get('build_date')} size={v.get('size')}")
+          PY
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- ota.json history.json; then
+            echo "index is up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ota.json history.json
+          git commit -m "chore: refresh OTA index"
+          git push

@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "generated": 1795429352,
+  "dist": "ZeroWrt",
+  "devices": {
+    "ruijie_rg-x60-new": [
+      {
+        "version": "20261109",
+        "build_date": 1794232457,
+        "url": "https://github.com/MinimaxFlora/ZeroWrt/releases/download/mediatek_filogic/zerowrt-42629355038-mediatek-filogic-ruijie_rg-x60-new-squashfs-sysupgrade.bin",
+        "sha256": "af7322a4a803e4a3a87130eb2be4959782b1c964bbc321a4ac88219ca3b1b568",
+        "size": 42844966
+      }
+    ]
+  }
+}
