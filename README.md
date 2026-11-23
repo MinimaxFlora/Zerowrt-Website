@@ -10,7 +10,7 @@ ZeroWrt 的固件下载与在线升级站点：<https://ota.tatalvpai.vip/>
 
 ```
 index.html                  # 首页（中英切换，读取 ota.json / history.json）
-assets/                     # 样式、脚本、图标
+assets/                     # 样式、脚本、图标、首屏插画（bg.webp，取自 ZeroWrt/images/bg1.webp）
 tools/gen_site_data.py      # 从 ZeroWrt Release 生成索引与更新日志
 data/seed.json              # 尚未重建设备的兜底条目
 ota.json                    # OTA 索引（schema 2，luci-app-ota 直接读取）
