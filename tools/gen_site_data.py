@@ -267,12 +267,30 @@ def main(argv: list[str] | None = None) -> int:
         "devices": history,
     }
 
-    (out_dir / "ota.json").write_text(
-        json.dumps(index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    (out_dir / "history.json").write_text(
-        json.dumps(history_doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    def write_if_changed(path: Path, data: dict) -> bool:
+        """Keep the file untouched when only the timestamp would change.
 
-    log(f"wrote ota.json ({len(devices)} device key(s)) and history.json")
+        The workflow commits every change, so a timestamp-only diff would
+        produce a commit every 30 minutes.
+        """
+        if path.exists():
+            try:
+                old = json.loads(path.read_text(encoding="utf-8"))
+                if isinstance(old, dict):
+                    old = dict(old)
+                    old["generated"] = data["generated"]
+                    if old == data:
+                        return False
+            except (OSError, json.JSONDecodeError):
+                pass
+
+        path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        return True
+
+    changed = write_if_changed(out_dir / "ota.json", index)
+    changed = write_if_changed(out_dir / "history.json", history_doc) or changed
+
+    log(("wrote" if changed else "unchanged") + f" ota.json ({len(devices)} device key(s)) / history.json")
 
     if args.print:
         print(json.dumps(index, indent=2, ensure_ascii=False))
