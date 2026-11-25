@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated": 1795546114,
+  "generated": 1795617815,
   "dist": "ZeroWrt",
   "devices": {
     "ruijie_rg-x60-new": [
@@ -15,10 +15,10 @@
     "x86_64+efi": [
       {
         "version": "20261125",
-        "build_date": 1795537515,
+        "build_date": 1795606558,
         "url": "https://github.com/MinimaxFlora/ZeroWrt/releases/download/X86_64/zerowrt-x86-64-generic-squashfs-combined-efi.img.gz",
-        "sha256": "57fe624241f02dd9c3c4c3c4d51490a5c784e6c8fa2e8dc21048d3afec1a8765",
-        "size": 241936571
+        "sha256": "721d169e150f820d66a45ef736ccb17f59132d4ea911f2c10c19400c43cf69d6",
+        "size": 241933909
       }
     ]
   }
