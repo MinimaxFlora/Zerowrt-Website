@@ -1,7 +1,7 @@
 {
   "schema": 2,
   "generator": "Zerowrt-Website gen_site_data.py",
-  "generated": 1795636607,
+  "generated": 1795712092,
   "dist": "ZeroWrt",
   "devices": {
     "ruijie_rg-x60-new": {
@@ -18,16 +18,16 @@
     },
     "x86_64+efi": {
       "version": "20261126",
-      "build_date": 1795629980,
+      "build_date": 1795704196,
       "target": "x86/64",
       "device": "x86_64",
       "label": "ZeroWrt x86_64 (EFI)",
       "url": "https://github.com/MinimaxFlora/ZeroWrt/releases/download/X86_64/zerowrt-x86-64-generic-squashfs-combined-efi.img.gz",
-      "sha256": "c693c3ebc40427161252c812a79f03e1ef0014f150f964cb3506cb9eff85eb15",
-      "size": 243101473,
+      "sha256": "5db6d2e6ddf5a6c823abd12a95ef82db942afb897ecd9fe0c6137113ea7f7b14",
+      "size": 243112410,
       "file": "zerowrt-x86-64-generic-squashfs-combined-efi.img.gz",
       "variant": "efi",
-      "changelog": "**ZeroWrt 20261126**\n\n- 平台: x86/64\n- 构建时间: 2026-11-25 19:45:09 UTC"
+      "changelog": "**ZeroWrt 20261126**\n\n- 平台: x86/64\n- 构建时间: 2026-11-26 16:46:13 UTC"
     }
   }
 }
